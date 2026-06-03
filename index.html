@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mediation Resolution Training</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #0b0c0c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-banner {
+      background: #1d70b8;
+      padding: 10px 40px;
+    }
+
+    .top-banner h1 {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .navbar {
+      background: #ffffff;
+      border-bottom: 4px solid #1d70b8;
+      padding: 0 40px;
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      border-bottom: 4px solid transparent;
+      margin-bottom: -4px;
+      padding: 16px 22px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0b0c0c;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      color: #1d70b8;
+      background: #f4f8fb;
+    }
+
+    .nav-btn.active {
+      color: #1d70b8;
+      border-bottom-color: #1d70b8;
+    }
+
+    .dashboard-hero {
+      background: #1d70b8;
+      padding: 60px 40px 50px;
+      color: white;
+    }
+
+    .dashboard-hero h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .dashboard-cards {
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #cecece;
+      border-top: 4px solid #1d70b8;
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #0b0c0c;
+    }
+
+    .card-btn {
+      background: #1d70b8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+
+    .card-btn:hover {
+      background: #0f385c;
+    }
+
+    footer {
+      background: #f4f8fb;
+      border-top: 1px solid #cecece;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: auto;
+    }
+
+    footer span {
+      font-size: 13px;
+      color: #aaaaaa;
+      font-style: italic;
+    }
+.content-page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 50px 40px 60px;
+    }
+
+    .content-page h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #1d70b8;
+    }
+
+    .content-page p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #333;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      border: 2px solid #1d70b8;
+      color: #1d70b8;
+      background: none;
+      padding: 9px 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+
+    .back-btn:hover {
+      background: #1d70b8;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-banner">
+    <h1>Mediation Resolution Training</h1>
+  </div>
+
+  <nav class="navbar">
+    <button class="nav-btn active" onclick="showPage('dashboard', this)">Home</button>
+    <button class="nav-btn" onclick="showPage('page2', this)">What is mediation resolution</button>
+    <button class="nav-btn" onclick="showPage('page3', this)">Why mediation resolution</button>
+    <button class="nav-btn" onclick="showPage('page4', this)">When to use mediation resolution</button>
+    <button class="nav-btn" onclick="showPage('page5', this)">Examples of mediation resolution</button>
+  </nav>
+
+  <div id="dashboard" class="page">
+    <div class="dashboard-hero">
+      <h2>Mediation Resolution Training</h2>
+    </div>
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>What is mediation resolution</h3>
+        <button class="card-btn" onclick="showPageById('page2')">Explore section</button>
+      </div>
+      <div class="card">
+        <h3>Why mediation resolution</h3>
+        <button class="card-btn" onclick="showPageById('page3')">Explore section</button>
+      </div>
+      <div class="card">
+        <h3>When to use mediation resolution</h3>
+        <button class="card-btn" onclick="showPageById('page4')">Explore section</button>
+      </div>
+      <div class="card">
+        <h3>Examples of mediation resolution</h3>
+        <button class="card-btn" onclick="showPageById('page5')">Explore section</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="page2" class="page" style="display:none">
+    <div class="content-page">
+      <h2>What is mediation resolution</h2>
+      <p>Mediation resolution is...</p>
+      <button class="back-btn" onclick="showPageById('dashboard')">Back to Home</button>
+    </div>
+  </div>
+
+  <div id="page3" class="page" style="display:none">
+    <div class="content-page">
+      <h2>Why mediation resolution</h2>
+      <p>Why you should use mediation resolution...</p>
+      <button class="back-btn" onclick="showPageById('dashboard')">Back to Home</button>
+    </div>
+  </div>
+
+  <div id="page4" class="page" style="display:none">
+    <div class="content-page">
+      <h2>When to use mediation resolution</h2>
+      <p>When you should use mediation resolution...</p>
+      <button class="back-btn" onclick="showPageById('dashboard')">Back to Home</button>
+    </div>
+  </div>
+
+  <div id="page5" class="page" style="display:none">
+    <div class="content-page">
+      <h2>Examples of mediation resolution</h2>
+      <p>Examples of mediation resolution include...</p>
+      <button class="back-btn" onclick="showPageById('dashboard')">Back to Home</button>
+    </div>
+  </div>
+
+  <footer>
+    <span>Rachel Hill &nbsp;|&nbsp; Swansea University</span>
+  </footer>
+
+  <script>
+    function showPage(pageId, navBtn) {
+      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+      navBtn.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function showPageById(pageId) {
+      const map = { dashboard: 0, page2: 1, page3: 2, page4: 3, page5: 4 };
+      const btns = document.querySelectorAll('.nav-btn');
+      const idx = map[pageId];
+      showPage(pageId, btns[idx]);
+    }
+  </script>
+
+</body>
+</html>
